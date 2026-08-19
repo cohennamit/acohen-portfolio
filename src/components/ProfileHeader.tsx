@@ -62,7 +62,7 @@ export default function ProfileHeader({ profile }: ProfileHeaderProps) {
               Coding Academy Graduate - Full Stack Developer Bootcamp
             </p>
             <p className="text-xs text-silver font-medium">
-              Real-World Full-Stack & Systems Engineering Projects
+              Developing robust web solutions powered by modern software engineering.
             </p>
           </div>
         </div>
