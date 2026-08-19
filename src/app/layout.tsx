@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next"; // 👇 1. Added Viewport import here
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// 👇 2. Added this block to control the iOS status bar color
+export const viewport: Viewport = {
+  // IMPORTANT: Change this hex code to the exact hex code of your surface-200 color!
+  themeColor: "#1f2937", 
+};
 
 export const metadata: Metadata = {
   title: "Amit Cohen | Software Developer",
@@ -42,7 +48,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* 👇 3. Added bg-surface-200 here so the "underneath" layer of the site is dark */}
+      <body className="bg-surface-200 min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

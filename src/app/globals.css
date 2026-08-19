@@ -24,6 +24,12 @@
   --shadow-elevate-md: 0 8px 24px rgba(0, 0, 0, 0.9);
   --shadow-glow-silver: 0 0 20px rgba(184, 188, 196, 0.25);
 }
+
+/* 👇 FIXED: Added HTML block to force iOS into dark mode and provide a solid color for the status bar */
+html {
+  background-color: var(--color-surface-200); 
+  color-scheme: dark;
+}
  
 body {
   /* Ambient background drift using your original dark gray palette */
