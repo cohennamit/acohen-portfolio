@@ -1,0 +1,49 @@
+@import "tailwindcss";
+ 
+@theme {
+  /* Surface scale: deep dark gray -> pure black */
+  --color-surface-50: #1a1a1c;   /* highest elevation (raised cards, modals) */
+  --color-surface-100: #141416;  /* elevated cards */
+  --color-surface-200: #0e0e10;  /* default card surface */
+  --color-surface-300: #08080a;  /* section background */
+  --color-surface-400: #000000;  /* page background / deepest recess */
+ 
+  /* Typography & icon accents */
+  --color-ink-muted: #8a8d93;    /* secondary text, captions */
+  --color-ink: #c9cbd1;          /* body text */
+  --color-ink-bright: #f5f5f7;   /* headings, emphasis */
+  --color-ink-white: #ffffff;    /* pure white, sparing use */
+ 
+  /* Metallic silver accents */
+  --color-silver: #b8bcc4;       /* base metallic tone */
+  --color-silver-light: #d8dae0; /* hover highlight */
+  --color-silver-shine: #eef0f4; /* specular highlight / glow edge */
+ 
+  /* Shadows */
+  --shadow-elevate-sm: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-elevate-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow-silver: 0 0 20px rgba(184, 188, 196, 0.25);
+}
+ 
+body {
+  background-color: var(--color-surface-400);
+  color: var(--color-ink);
+}
+/* Custom Modern Silver Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(192, 192, 192, 0.25); /* Silver tint */
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 192, 192, 0.6); /* Brighter silver on hover */
+}

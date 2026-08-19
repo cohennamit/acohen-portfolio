@@ -1,0 +1,189 @@
+{
+"profile": {
+    "fullName": "Amit Cohen",
+    "degree": "B.Sc. Computer Science, Holon Institute of Technology (HIT)",
+    "gpa": 93,
+    "academicTimeline": "10/2024 - Present (1+ Year Remaining)",
+    "academicDescription": "Currently enrolled in a flexible evening program, allowing for full-time employment as well as student positions. This degree has equipped me with a robust foundation in mathematics, logical and critical thinking, software engineering, complex algorithmic logic, and object-oriented programming. Beyond core data structures, my studies dive deep into low-level architecture and practical systems, covering computer systems, operating systems, database management, and computer networks. Additionally, I am expanding into advanced AI fields like machine learning and deep learning-bridging theoretical computer science with scalable software development.",
+    "photoPath": "/images/profile.jpeg",
+    "highlightFields": [
+      "Machine Learning",
+      "Algorithms",
+      "Systems & Networks",
+      "Full-Stack Development"
+    ],
+    "bootcamp": {
+      "name": "Full Stack Developer Bootcamp - Coding Academy",
+      "hours": 640,
+      "description": "An intensive 640-hour training program covering end-to-end full-stack development across front-end, back-end, and cloud technologies. Developed multiple projects using modern frameworks in both solo and collaborative team workflows.",
+      "technologies": "HTML, CSS, JavaScript, Vue.js, React, Angular, Node.js, Express, REST APIs, MongoDB, MySQL"
+    },
+    "highschool": {
+    "name": "Ginsburg High School, Yavne",
+    "description": "Graduated with an outstanding <strong>104+ Bagrut average</strong>, majoring in <strong>Computer Science (5 points)</strong> and <strong>Biology</strong>. Developed a strong foundational understanding of C#, correct semantics, object-oriented programming, and core data structures through three years of extensive learning and project development."
+    }
+  },
+  "tracks": [
+    {
+      "id": "software-development",
+      "title": "Software Development",
+      "shortDescription": "Full-stack engineering, data structures, and scalable system design.",
+      "cvFilePath": "/cv/cv-software-dev.pdf",
+      "backgroundSceneId": "algorithms-graph"
+    },
+    {
+      "id": "ml-ai",
+      "title": "Machine Learning & AI",
+      "shortDescription": "From classical ML pipelines to deep learning, generative models, and AI-aware security.",
+      "cvFilePath": "/cv/cv-ml-ai.pdf",
+      "backgroundSceneId": "neural-network"
+    },
+    {
+      "id": "devops",
+      "title": "DevOps",
+      "shortDescription": "Systems, automation, infrastructure, and reverse engineering behind reliable software.",
+      "cvFilePath": "/cv/cv-devops.pdf",
+      "backgroundSceneId": "devops-pipeline"
+    },
+    {
+      "id": "networks",
+      "title": "Networks",
+      "shortDescription": "Protocols, sockets, and communication systems — including the security layer.",
+      "cvFilePath": "/cv/cv-networks.pdf",
+      "backgroundSceneId": "network-grid"
+    }
+  ],
+"projects": [
+    {
+      "id": "personal-portfolio",
+      "title": "Interactive Developer Portfolio",
+      "category": "Front-End Development",
+      "description": "A modern, fully responsive personal portfolio featuring a modular tab-based navigation system. Built with a focus on clean UI/UX, reusable components, and smooth animations to effectively showcase my academic journey, career tracks, and software projects.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Component Architecture",
+        "Responsive Design"
+      ],
+      "trackIds": [
+        "software-development"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "spam-detection",
+      "title": "SMS Spam Detection",
+      "category": "Machine Learning & NLP",
+      "description": "A robust Natural Language Processing (NLP) pipeline engineered for automated SMS spam classification. This project implements a custom, scratch-built NumPy-based K-Nearest Neighbors (KNN) classifier paired with TF-IDF vectorization and data balancing strategies, achieving an impressive 0.926 macro F1-score.",
+      "techStack": [
+        "Python",
+        "NumPy",
+        "scikit-learn",
+        "Pandas",
+        "Text Tokenization",
+        "Evaluation Metrics"
+      ],
+      "trackIds": [
+        "ml-ai"
+      ],
+      "metrics": "0.926 macro F1-score",
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "pysocket-chat",
+      "title": "PySocket Chat System",
+      "category": "Networks & Systems",
+      "description": "A multi-client real-time communication platform built on foundational networking principles. Utilizing low-level TCP sockets and multi-threading for concurrent client management, the system ensures seamless message delivery backed by an interactive Tkinter graphical user interface.",
+      "techStack": [
+        "Python",
+        "TCP/IP Sockets",
+        "Multithreading",
+        "Tkinter",
+        "Concurrency",
+        "Event-Driven Architecture"
+      ],
+      "trackIds": [
+        "networks"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "satisfy",
+      "title": "Satisfy (Spotify Clone)",
+      "category": "Full-Stack Web Development",
+      "description": "A full-stack music streaming web application designed to replicate core Spotify features and user interactions. Built using a modern JavaScript stack with Vue.js on the front-end and an Express and MongoDB back-end, it integrates real-time communication powered by WebSockets.",
+      "techStack": [
+        "Vue.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "WebSockets",
+        "RESTful APIs",
+        "State Management"
+      ],
+      "trackIds": [
+        "software-development"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "investing-helper",
+      "title": "InvestingHelper Platform",
+      "category": "Front-End Application",
+      "description": "A tailored financial calculator and advisory platform built specifically for a paying client. Engineered to deliver a frictionless experience across all devices, it features precise calculations and a streamlined user interface developed with React and TypeScript.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Financial Modeling",
+        "Client-Side Validation",
+        "Responsive UI Design"
+      ],
+      "trackIds": [
+        "software-development"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "restaurant-management",
+      "title": "Restaurant Management System",
+      "category": "Object-Oriented Design",
+      "description": "A comprehensive object-oriented management model designed to streamline complex restaurant operations. Developed from the ground up in C#, it enforces advanced software engineering principles, clean code semantics, and robust architectural best practices.",
+      "techStack": [
+        "C#",
+        ".NET Framework",
+        "Object-Oriented Programming (OOP)",
+        "Design Patterns",
+        "Data Structures",
+        "In-Memory Database Modeling"
+      ],
+      "trackIds": [
+        "software-development"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    },
+    {
+      "id": "more-projects",
+      "title": "Always-Updating GitHub Repository",
+      "category": "Continuous Learning & Developing",
+      "description": "A growing collection of experimental codebases, ongoing side projects, and continuous learning implementations. Visit my GitHub profile to explore my latest repositories and daily development work.",
+      "techStack": [
+        "Git",
+        "GitHub",
+        "CI/CD Concepts",
+        "Open Source",
+        "Agile Iteration",
+        "Experimental Frameworks"
+      ],
+      "trackIds": [
+        "software-development",
+        "ml-ai",
+        "devops",
+        "networks"
+      ],
+      "githubLink": "https://github.com/cohennamit"
+    }
+  ]
+}
