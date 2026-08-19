@@ -56,7 +56,6 @@ export default function CareerTracksSection({ onSelectProject }: CareerTracksSec
   };
 
   return (
-    // Changed px-4 to px-0 on mobile, keeping sm:px-12 for desktop
     <div className="relative w-full flex items-center justify-center max-w-7xl mx-auto px-0 sm:px-6">
       
       {/* Left Navigation Arrow */}
@@ -73,9 +72,10 @@ export default function CareerTracksSection({ onSelectProject }: CareerTracksSec
       {/* Carousel Container */}
       <div 
         ref={scrollRef}
-        className="flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 gap-4 sm:gap-8 px-[5%] md:px-[15%] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        // 👇 FIXED: Changed py-2 to py-12 and added -my-10 to expand the clipping boundary!
+        className="flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth py-12 -my-10 gap-4 sm:gap-8 px-[5%] md:px-[15%] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
-        {/* Track Cards - Passing the prop down */}
+        {/* Track Cards */}
         <div className="w-[93%] md:w-[80%] shrink-0 snap-center flex items-stretch">
           <Software onSelectProject={onSelectProject} />
         </div>

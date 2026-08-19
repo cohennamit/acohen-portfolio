@@ -1,12 +1,12 @@
 @import "tailwindcss";
  
 @theme {
-  /* Surface scale: deep dark gray -> pure black */
-  --color-surface-50: #1a1a1c;   /* highest elevation (raised cards, modals) */
-  --color-surface-100: #141416;  /* elevated cards */
+  /* Inverted Original Scale: Dark gray background -> Pure black cards */
+  --color-surface-50: #000000;   /* highest elevation (raised cards, modals - pure black) */
+  --color-surface-100: #08080a;  /* elevated cards */
   --color-surface-200: #0e0e10;  /* default card surface */
-  --color-surface-300: #08080a;  /* section background */
-  --color-surface-400: #000000;  /* page background / deepest recess */
+  --color-surface-300: #141416;  /* section background */
+  --color-surface-400: #1a1a1c;  /* main page background (dark gray) */
  
   /* Typography & icon accents */
   --color-ink-muted: #8a8d93;    /* secondary text, captions */
@@ -19,16 +19,26 @@
   --color-silver-light: #d8dae0; /* hover highlight */
   --color-silver-shine: #eef0f4; /* specular highlight / glow edge */
  
-  /* Shadows */
-  --shadow-elevate-sm: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-elevate-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  /* Shadows (Deepened slightly to ensure black cards pop off the dark gray) */
+  --shadow-elevate-sm: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-elevate-md: 0 8px 24px rgba(0, 0, 0, 0.9);
   --shadow-glow-silver: 0 0 20px rgba(184, 188, 196, 0.25);
 }
  
 body {
-  background-color: var(--color-surface-400);
+  /* Ambient background drift using your original dark gray palette */
+  background: linear-gradient(-45deg, var(--color-surface-400), var(--color-surface-300), #1f1f22, var(--color-surface-400));
+  background-size: 400% 400%;
+  animation: ambient-drift 15s ease infinite;
   color: var(--color-ink);
 }
+
+@keyframes ambient-drift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Custom Modern Silver Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;

@@ -22,7 +22,7 @@ export default function ProfileHeader({ profile }: ProfileHeaderProps) {
 
   return (
     <motion.div 
-      className="z-10 w-full bg-surface-300 border-b border-surface-200 px-6 sm:px-12 lg:px-24 py-8 shadow-elevate-sm"
+      className="z-10 w-full bg-surface-200 border-b border-surface-100 px-6 sm:px-12 lg:px-24 py-8 shadow-elevate-sm"
       variants={itemVars}
       initial="hidden"
       animate="visible"
@@ -33,16 +33,18 @@ export default function ProfileHeader({ profile }: ProfileHeaderProps) {
         <div className="flex md:hidden flex-col gap-4 w-full">
           <div className="flex items-center gap-5 w-full">
             {/* Profile Picture */}
-            <div className="relative group shrink-0">
-              <div className="absolute -inset-1 bg-gradient-to-r from-silver to-surface-100 rounded-2xl blur opacity-40"></div>
+            {/* 👇 FIXED: Set exact dimensions for the wrapper so the spin calculates correctly */}
+            <div className="relative group shrink-0 flex items-center justify-center w-24 h-24">
+              {/* 👇 THE MAGIC: Rotating circular gradient */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-silver via-transparent to-transparent rounded-full blur-md opacity-60 animate-[spin_4s_linear_infinite]"></div>
               <img 
                 src="/images/profile.jpeg" 
                 alt={profile.fullName} 
-                className="relative w-24 h-24 aspect-square object-cover rounded-2xl border-2 border-surface-200 shadow-elevate-md"
+                className="relative w-full h-full object-cover rounded-2xl border-2 border-surface-200 shadow-elevate-md"
               />
             </div>
 
-            {/* Name and Title (Bigger on mobile: text-3xl and text-base) */}
+            {/* Name and Title */}
             <div className="flex flex-col justify-center text-left">
               <h1 className="text-3xl font-bold uppercase tracking-wider font-sans text-ink-white leading-tight">
                 {profile.fullName}
@@ -70,12 +72,14 @@ export default function ProfileHeader({ profile }: ProfileHeaderProps) {
         {/* DESKTOP LAYOUT */}
         <div className="hidden md:flex flex-row items-stretch gap-10 w-full">
           {/* Profile Picture */}
-          <div className="relative group shrink-0 self-stretch flex items-center">
-            <div className="absolute -inset-1 bg-gradient-to-r from-silver to-surface-100 rounded-2xl blur opacity-40 group-hover:opacity-70 transition duration-1000"></div>
+          {/* 👇 FIXED: Set exact dimensions for the wrapper so the spin calculates correctly */}
+          <div className="relative group shrink-0 self-stretch flex items-center justify-center w-36 h-36">
+            {/* 👇 THE MAGIC: Rotating circular gradient (slightly larger blur for desktop) */}
+            <div className="absolute -inset-5 bg-gradient-to-tr from-silver via-transparent to-transparent rounded-full blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-1000 animate-[spin_4s_linear_infinite]"></div>
             <img 
               src="/images/profile.jpeg" 
               alt={profile.fullName} 
-              className="relative h-full max-h-36 aspect-square object-cover rounded-2xl border-2 border-surface-200 shadow-elevate-md"
+              className="relative w-full h-full object-cover rounded-2xl border-2 border-surface-200 shadow-elevate-md"
             />
           </div>
 
@@ -96,7 +100,7 @@ export default function ProfileHeader({ profile }: ProfileHeaderProps) {
                 Coding Academy Graduate - Full Stack Developer Bootcamp
               </p>
               <p className="text-sm text-silver font-medium">
-                Real-World Full-Stack & Systems Engineering Projects
+                Developing software solutions powered by modern engineering practices.
               </p>
             </div>
           </div>

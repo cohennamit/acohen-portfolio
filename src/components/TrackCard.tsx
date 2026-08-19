@@ -1,4 +1,7 @@
+"use client";
+
 import { ExternalLink, Code2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Course {
   name: string;
@@ -6,7 +9,7 @@ interface Course {
 }
 
 interface Project {
-  id?: string; // Added ID so we know which project to scroll to
+  id?: string;
   name: string;
   link?: string;
   linkName?: string;
@@ -18,7 +21,7 @@ interface TrackCardProps {
   courses: Course[];
   projects?: Project[];
   cvLink: string;
-  onSelectProject?: (projectId: string) => void; // Added the function prop
+  onSelectProject?: (projectId: string) => void;
 }
 
 export default function TrackCard({ 
@@ -27,19 +30,30 @@ export default function TrackCard({
   courses, 
   projects = [], 
   cvLink,
-  onSelectProject // Destructured the new prop
+  onSelectProject 
 }: TrackCardProps) {
   const styles = {
-    card: "w-full px-6 sm:px-8 pt-6 pb-8 bg-surface-300 border border-surface-200 rounded-2xl shadow-elevate-md hover:border-silver transition-all flex flex-col h-[600px] shrink-0",
+    // 👇 FIXED: Changed transition-all to transition-colors here
+    card: "w-full px-6 sm:px-8 pt-6 pb-8 bg-surface-300 border border-surface-200 rounded-2xl shadow-elevate-md hover:border-silver transition-colors flex flex-col h-[600px] shrink-0",
     title: "text-xl sm:text-2xl font-bold text-ink-white mb-2 transition-colors",
-description: "text-xs sm:text-sm text-ink-muted leading-relaxed",    sectionHeader: "text-[11px] sm:text-xs font-bold text-silver uppercase tracking-wider block mb-2",
+    description: "text-xs sm:text-sm text-ink-muted leading-relaxed",    
+    sectionHeader: "text-[11px] sm:text-xs font-bold text-silver uppercase tracking-wider block mb-2",
     coursePill: "px-2.5 py-1 bg-surface-400 rounded-md text-xs text-ink-bright border border-surface-200 flex items-center gap-1.5 shrink-0",
     projectPill: "px-2.5 py-1 bg-surface-400/80 hover:bg-surface-400 rounded-md text-xs text-ink-white border border-surface-200 hover:border-silver transition-all flex items-center gap-1.5 shrink-0 group/proj cursor-pointer",
     cvButton: "mx-auto px-8 py-3 bg-surface-400 border border-surface-200 hover:border-silver text-silver hover:text-ink-white font-bold text-sm sm:text-base rounded-xl transition-all flex items-center justify-center gap-2 w-fit shrink-0"
   };
 
   return (
-    <div className={styles.card}>
+    <motion.div 
+      className={styles.card}
+      // 👇 FIXED: Snappier physics, deeper shadow, brighter silver glow, and slight scale up
+      whileHover={{ 
+        y: -12, 
+        scale: 1.02,
+        boxShadow: "0 30px 60px rgba(0,0,0,0.9), 0 0 35px rgba(184, 188, 196, 0.35)" 
+      }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+    >
       {/* Header & Description */}
       <div className="mb-2 shrink-0">
         <h3 className={styles.title}>{title}</h3>
@@ -117,7 +131,7 @@ description: "text-xs sm:text-sm text-ink-muted leading-relaxed",    sectionHead
           </div>
         </div>
         
-        {/* Fixed padding: Changed from pt-4 to py-2 so the button is perfectly centered */}
+        {/* Fixed padding */}
         <div className="py-2 flex items-center justify-center shrink-0">
             <a 
             href={cvLink} 
@@ -130,6 +144,6 @@ description: "text-xs sm:text-sm text-ink-muted leading-relaxed",    sectionHead
         </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 }
