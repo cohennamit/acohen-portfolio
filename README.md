@@ -26,10 +26,13 @@ Built with a focus on clean UI/UX, modular component architecture, smooth animat
 
 ---
 
-## 🚀 Getting Started Locally
+## 🚀 Getting Started & Deployment
 
-To run this project locally on your machine, follow these steps:
+To run this project locally on your machine or check it out live:
 
-1. **Clone the repository:**
+1. **View Live Demo:**
+   👉 [Click here to view the live Vercel deployment](YOUR_VERCEL_LINK_HERE) *(Coming Soon)*
+
+2. **Clone the repository:**
    ```bash
    git clone [https://github.com/cohennamit/acohen-portfolio.git](https://github.com/cohennamit/acohen-portfolio.git)
