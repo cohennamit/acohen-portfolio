@@ -12,17 +12,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 👇 2. Added this block to control the iOS status bar color
+// 👇 2. FIXED: Replaced the light gray with your exact dark surface-200 hex (#0e0e10)
 export const viewport: Viewport = {
-  // IMPORTANT: Change this hex code to the exact hex code of your surface-200 color!
-  themeColor: "#1f2937", 
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0e0e10" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0e10" },
+  ],
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
   title: "Amit Cohen | Software Developer",
   description: "Interactive developer portfolio showcasing my academic journey, career tracks, and software projects.",
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231f2937%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2248%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23e5e7eb%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>AC</text></svg>",
+    // 👇 FIXED: Also changed the favicon background to match #0e0e10
+    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230e0e10%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2248%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23e5e7eb%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>AC</text></svg>",
   },
   openGraph: {
     title: "Amit Cohen | Software Developer",
